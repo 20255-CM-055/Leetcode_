@@ -2,29 +2,29 @@ class Solution {
 public:
     int dominantIndex(vector<int>& nums) {
         int n=nums.size();
+        int f=-1;
+        int s=-1;
         int index=-1;
-        int first=-1;
-        int second=-1;
 
         for(int i=0;i<n;i++)
         {
-            if(nums[i]>first)
+            if(nums[i]>f)
             {
-                second=first;
-                first=nums[i];
+                s=f;
+                f=nums[i];
                 index=i;
             }
-            else if(nums[i]>second)
+            else if(nums[i]>s)
             {
-                second=nums[i];
+                s=nums[i];
             }
         }
 
-        if(first>=second*2)
+        if(s*2 <=f)
         {
             return index;
         }
-        
+
         return -1;
     }
 };
