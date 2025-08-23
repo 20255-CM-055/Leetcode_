@@ -5,20 +5,15 @@ public:
         int val=n/2;
         int ans=0;
 
-        map<int,int> mpp;
+        set<int> st;
 
         for(int a:nums)
         {
-            mpp[a]++;
-        }
-
-        for(auto it:mpp)
-        {
-            if(it.second==val)
+            if(st.count(a))
             {
-                ans=it.first;
-                break;
+                ans=a;;
             }
+            st.insert(a);
         }
 
         return ans;
