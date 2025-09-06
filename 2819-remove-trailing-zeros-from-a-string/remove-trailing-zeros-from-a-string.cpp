@@ -3,7 +3,10 @@ public:
     string removeTrailingZeros(string num) {
         int n=num.size();
 
-        num.erase(num.find_last_not_of('0')+1);
+        while(!num.empty() && num.back()=='0')
+        {
+            num.pop_back();
+        }
 
         return num;
     }
