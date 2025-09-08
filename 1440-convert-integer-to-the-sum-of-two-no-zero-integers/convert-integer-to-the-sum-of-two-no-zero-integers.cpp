@@ -1,4 +1,3 @@
-
 bool zero(int num)
 {
     while(num>0)
