@@ -1,11 +1,9 @@
 class Solution {
 public:
     int canBeTypedWords(string text, string brokenLetters) {
-        int t=text.size();
-        int b=brokenLetters.size();
-        string word;
         stringstream ss(text);
         int cnt=0;
+        string word;
 
         while(ss>>word)
         {
