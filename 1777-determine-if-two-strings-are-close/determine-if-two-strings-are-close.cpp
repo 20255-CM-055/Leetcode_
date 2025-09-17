@@ -1,24 +1,23 @@
 class Solution {
 public:
     bool closeStrings(string word1, string word2) {
-        int n1=word1.size();
-        int n2=word2.size();
-
-        if(n1!=n2)
-        {
-            return false;
-        }
-
         set<char> s1(word1.begin(),word1.end());
         set<char> s2(word2.begin(),word2.end());
+
+        vector<int> a1,a2;
 
         if(s1!=s2)
         {
             return false;
         }
-       
-        unordered_map<char,int> mpp1;
-        unordered_map<char,int> mpp2;
+
+        if(word1.size()!=word2.size())
+        {
+            return false;
+        }
+
+        unordered_map<char,int>mpp1;
+        unordered_map<char,int>mpp2;
 
         for(char ch:word1)
         {
@@ -29,8 +28,6 @@ public:
         {
             mpp2[ch]++;
         }
-
-        vector<int> a1,a2;
 
         for(auto it:mpp1)
         {
