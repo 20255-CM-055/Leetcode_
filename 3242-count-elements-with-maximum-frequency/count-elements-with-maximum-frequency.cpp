@@ -3,6 +3,7 @@ public:
     int maxFrequencyElements(vector<int>& nums) {
         int n=nums.size();
         map<int,int> mpp;
+        int freq=0;
         int ans=0;
 
         for(int a:nums)
@@ -10,19 +11,14 @@ public:
             mpp[a]++;
         }
 
-        int freq=0;
-
         for(auto it:mpp)
         {
-            if(it.second>freq)
-            {
-                freq=it.second;
-            }
+            freq=max(freq,it.second);
         }
 
         for(auto it:mpp)
         {
-            if(it.second==freq)
+            if(freq==it.second)
             {
                 ans=ans+it.second;
             }
