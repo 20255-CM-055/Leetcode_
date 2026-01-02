@@ -2,18 +2,19 @@ class Solution {
 public:
     int repeatedNTimes(vector<int>& nums) {
         int n=nums.size();
-        int val=n/2;
-        int ans=0;
+        int x=n/2;
 
-        set<int> st;
+        map<int,int> mpp;
 
-        for(int a:nums)
-        {
-            if(st.count(a))
-            {
-                ans=a;;
+        for(int a:nums){
+            mpp[a]++;
+        }
+
+        int ans=-1;
+        for(auto it:mpp){
+            if(it.second==x){
+                ans=it.first;
             }
-            st.insert(a);
         }
 
         return ans;
