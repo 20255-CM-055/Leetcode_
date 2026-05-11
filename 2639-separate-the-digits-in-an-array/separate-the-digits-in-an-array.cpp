@@ -1,19 +1,17 @@
 class Solution {
 public:
     vector<int> separateDigits(vector<int>& nums) {
+        vector<int> arr;
         int n=nums.size();
-        vector<int> ans;
 
-        for(int a:nums)
-        {
-            string str=to_string(a);
+        for(int a:nums){
+            string s=to_string(a);
 
-            for(char ch:str)
-            {
-                ans.push_back(ch-'0');
+            for(char ch:s){
+                arr.push_back(ch-'0');
             }
         }
 
-        return ans;
+        return arr;
     }
 };
