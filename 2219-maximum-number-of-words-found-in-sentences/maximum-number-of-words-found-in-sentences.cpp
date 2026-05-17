@@ -2,23 +2,21 @@ class Solution {
 public:
     int mostWordsFound(vector<string>& sentences) {
         int n=sentences.size();
-        int ans=INT_MIN;
         int cnt=0;
+        int maxi=0;
 
-        for(int i=0;i<n;i++)
-        {
-            cnt=1;
-            for(char ch:sentences[i])
-            {
-                if(ch==' ')
-                {
-                    cnt++;
-                }
+        for(int i=0;i<n;i++){
+            string s=sentences[i];
+            stringstream ss(s);
+            string word;
+            cnt=0;
+            
+            while(ss>>word){
+                cnt++;
+                maxi=max(cnt,maxi);
             }
-
-            ans=max(ans,cnt);
         }
 
-        return ans;
+        return maxi;
     }
 };
