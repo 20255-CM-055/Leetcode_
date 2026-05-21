@@ -9,17 +9,22 @@ public:
             return false;
         }
 
-        sort(s.begin(),s.end());
-        sort(t.begin(),t.end());
+       map<char,int> mpp;
 
-        for(int i=0;i<n1;i++)
-        {
-            if(s[i]!=t[i])
-            {
-                return false;
-            }
+       for(char ch:s){
+        mpp[ch]++;
+       }
+
+       for(char ch:t){
+        mpp[ch]--;
+       }
+
+       for(auto it:mpp){
+        if(it.second!=0){
+            return false;
         }
+       }
 
-        return true;
+       return true;
     }
 };
