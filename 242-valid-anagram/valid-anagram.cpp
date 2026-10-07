@@ -1,30 +1,13 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        int n1=s.size();
-        int n2=t.size();
+        sort(s.begin(),s.end());
+        sort(t.begin(),t.end());
 
-        if(n1!=n2)
-        {
-            return false;
+        if(s==t){
+            return true;
         }
 
-       map<char,int> mpp;
-
-       for(char ch:s){
-        mpp[ch]++;
-       }
-
-       for(char ch:t){
-        mpp[ch]--;
-       }
-
-       for(auto it:mpp){
-        if(it.second!=0){
-            return false;
-        }
-       }
-
-       return true;
+        return false;
     }
 };
