@@ -2,9 +2,8 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         int n=nums.size();
-        int temp=INT_MIN;
         int ans=0;
-
+        int t=INT_MIN;
         map<int,int> mpp;
 
         for(int a:nums){
@@ -12,8 +11,8 @@ public:
         }
 
         for(auto it:mpp){
-            if(it.second>temp){
-                temp=it.second;
+            if(it.second>t){
+                t=it.second;
                 ans=it.first;
             }
         }
